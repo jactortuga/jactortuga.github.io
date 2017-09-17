@@ -1,0 +1,283 @@
+.body {
+  box-sizing: border-box;
+  color: white;
+  font-family: Helvetica, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 500;
+  margin: 0 auto;
+  padding: 0 100px;
+  width: 100vw;
+}
+
+::selection {
+  background: #FC9ACC; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #FC9ACC; /* Gecko Browsers */
+}
+
+.body__background {
+  background-image: url('../img/animated_background.gif');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: -2;
+}
+
+.body__opacity {
+  background-color: rgba(0,0,0,0.7);
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: -1;
+}
+
+
+.header {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.header__top {
+  display: flex;
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.header__bar {
+  background-color: white;
+  bottom: 0;
+  display: block;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.header__title {
+  display: flex;
+  flex-direction: column;
+  font-size: 28px;
+  justify-content: flex-end;
+  opacity: 1;
+  padding-bottom: 20px;
+  position: relative;
+  width: 100%;
+  z-index: 11;
+}
+
+.main {
+  min-height: calc(100vh - 140px);
+}
+
+.main__central {
+  display: flex;
+}
+
+.main__inner {
+  padding: 50px 0;
+}
+
+.main__inner--left {
+  font-size: 60px;
+  margin-right: 5%;
+  width: 30%;
+}
+
+.main__inner--center {
+  font-size: 28px;
+  margin-right: 5%;
+  width: 50%;
+}
+
+.main__inner--center p:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+
+.main__inner--right {
+  text-align: right;
+  width: 10%;
+}
+
+.main__link {
+  color: white;
+  cursor: pointer;
+
+  position: relative;
+  text-decoration: none;
+}
+
+.main__link:before {
+  background-color: white;
+  bottom: 0;
+  content: '';
+  height: 2px;
+  left: 0;
+  position: absolute;
+  -webkit-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
+  visibility: hidden;
+  width: 0;
+}
+
+.main__link:hover:before {
+  visibility: visible;
+  width: 100%;
+}
+
+.main__link--right {
+  clear: right;
+  display: block;
+  float: right;
+  font-size: 18px;
+}
+
+.main__link--right:before {
+  bottom: -1px;
+}
+
+.main__link:not(:last-of-type) {
+  margin-bottom: 5px;
+}
+
+.footer {
+  height: 40px;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+.footer__inner {
+  font-size: 18px;
+  text-align: right;
+  width: 100%;
+}
+
+/*Responsiveness*/
+@media screen and (max-width: 1350px) {
+  .header__title {
+    font-size: 24px;
+  }
+
+  .main__inner--left {
+    font-size: 50px;
+  }
+
+  .main__inner--center {
+      font-size: 24px;
+  }
+
+  .main__link--right {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .body {
+    padding: 0 50px;
+  }
+
+  .main__central {
+    flex-direction: column;
+  }
+
+  .main__inner--left {
+    margin-right: 0;
+    padding: 45px 0 15px 0;
+    width: 100%;
+  }
+
+  .main__inner--center {
+    font-weight: 100;
+    margin-right: 0;
+    padding: 15px 0;
+    width: 100%;
+  }
+
+  .main__inner--right {
+    font-weight: 100;
+    padding: 15px 0;
+    text-align: left;
+    width: 100%;
+  }
+
+  .main__link--right {
+    clear: left;
+    float: left;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .body {
+    padding: 0 15px;
+  }
+
+  .header__top {
+    height: 75px;
+  }
+
+  .header__title {
+    font-size: 22px;
+    padding-bottom: 15px;
+  }
+
+  .main {
+    min-height: calc(100vh - 115px);
+  }
+
+  .main__inner--left {
+    font-size: 40px;
+  }
+
+  .main__inner--center {
+    font-size: 20px;
+  }
+
+  .main__inner--center p:not(:last-of-type) {
+    margin-bottom: 15px;
+  }
+
+  .main__link--right {
+    font-size: 14px;
+  }
+
+  .footer__inner {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .main__inner--left {
+    padding: 30px 0 15px 0;
+  }
+
+  .main__inner--center {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header__title {
+    font-size: 20px;
+  }
+
+  .main__inner--left {
+    font-size: 35px;
+  }
+
+  .main__inner--center {
+    font-size: 16px;
+  }
+
+  .footer__inner {
+    font-size: 14px;
+  }
+}
